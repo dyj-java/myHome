@@ -1,14 +1,7 @@
-import './assets/main.css'
-
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-
 import App from './App.vue'
+// 导入路由
 import router from './router'
 
-const app = createApp(App)
-
-app.use(createPinia())
-app.use(router)
-
-app.mount('#app')
+// 顺序不能错：先use路由，再mount
+createApp(App).use(router).mount('#app')
